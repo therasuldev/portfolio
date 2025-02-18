@@ -1,9 +1,10 @@
 mod components;
+mod data;
 mod services;
 
 use components::{
     contacts_section::ContactsSection, profile_section::ProfileSection,
-    projects_section::ProjectsSection, work_experience_section::WorkExperienceSection,
+    projects_section::ProjectsSection, work_experience_section::ExperienceSection,
 };
 use services::{
     contact_service::fetch_contacts_data, profile_service::fetch_profile_data,
@@ -151,7 +152,7 @@ fn HomePage() -> Html {
         }
         ActiveSection::Experience => {
             html! {
-                <WorkExperienceSection
+                <ExperienceSection
                     experiences={(*experiences).clone()}
                     error={(*error).clone()}
                 />
@@ -217,12 +218,12 @@ fn HomePage() -> Html {
                             <div class="relative group">
                                 <button
                                     class={format!(
-                                        "w-12 h-12 flex items-center justify-center rounded-full border-2 border-green-600 \
+                                        "w-12 h-12 flex items-center justify-center rounded-full border-2 border-purple-600 \
                                         transition-all duration-300 {} {} {}",
                                         if is_active {
-                                            "bg-green-900 text-white shadow-lg scale-110 border-green-600"
+                                            "bg-purple-900 text-white shadow-lg scale-110 border-purple-600"
                                         } else {
-                                            "text-green-500 hover:bg-gray-800 hover:border-green-400"
+                                            "text-white hover:bg-gray-800 hover:border-purple-400"
                                         },
                                         "transform hover:scale-110",
                                         if is_shaking { "shake" } else { "" }

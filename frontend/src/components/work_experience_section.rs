@@ -1,22 +1,16 @@
 use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
-#[derive(Clone, PartialEq, Serialize, Deserialize)]
-pub struct WorkExperience {
-    company: String,
-    position: String,
-    period: String,
-    description: String,
-}
+use crate::data::Experience;
 
 #[derive(Properties, PartialEq)]
-pub struct WorkExperienceSectionProps {
-    pub experiences: Vec<WorkExperience>,
+pub struct ExperienceSectionProps {
+    pub experiences: Vec<Experience>,
     pub error: Option<String>,
 }
 
 #[function_component]
-pub fn WorkExperienceSection(props: &WorkExperienceSectionProps) -> Html {
+pub fn ExperienceSection(props: &ExperienceSectionProps) -> Html {
     html! {
         <div class="max-w-6xl w-full mb-4 mx-auto projects-section flex flex-col items-center" style="font-family: 'Space Mono', monospace;">
             <h1 class="text-2xl font-bold mb-3 text-center" style="color: #08504B;">{"Work Experience"}</h1>

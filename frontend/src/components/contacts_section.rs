@@ -1,12 +1,7 @@
 use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
-pub struct Contact {
-    pub id: i32,
-    pub name: String,
-    pub link: String,
-}
+use crate::data::Contact;
 
 #[derive(Properties, PartialEq)]
 pub struct ContactsSectionProps {
@@ -35,7 +30,7 @@ pub fn ContactsSection(props: &ContactsSectionProps) -> Html {
             <div class="flex justify-center gap-6 flex-wrap items-center">
                 {
                     props.contacts.iter().map(|contact| {
-                        let (icon_class, link) = match contact.name.as_str() {
+                        let (icon_class, link) = match contact.platform.as_str() {
                             "LinkedIn" => ("fab fa-linkedin text-4xl text-blue-400", contact.link.clone()),
                             "GitHub" => ("fab fa-github text-4xl text-gray-300", contact.link.clone()),
                             "Email" => ("fas fa-envelope text-4xl text-red-400", format!("mailto:{}", contact.link)),
@@ -53,7 +48,7 @@ pub fn ContactsSection(props: &ContactsSectionProps) -> Html {
                             >
                                 <i class={icon_class}></i>
                                 <span class="text-lg text-white font-medium hover:text-blue-400 transition-colors duration-200" style="font-size: 1.125rem; color: #718096; line-height: 1.6; letter-spacing: 0.05em;">
-                                    {&contact.name}
+                                    {&contact.platform}
                                 </span>
                             </a>
                         }

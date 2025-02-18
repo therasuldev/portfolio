@@ -1,13 +1,8 @@
 use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
-pub struct Project {
-    pub id: i32,
-    pub name: String,
-    pub description: String,
-    pub link: String,
-}
+use crate::data::Project;
+
 #[derive(Properties, PartialEq)]
 pub struct ProjectsSectionProps {
     pub projects: Vec<Project>,
