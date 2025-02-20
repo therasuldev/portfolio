@@ -1,3 +1,3 @@
 # Portfolio
 
-<https://therasuldev.github.io/Portfolio/>
+<https://therasuldev.github.io/portfolio/>

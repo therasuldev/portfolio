@@ -16,7 +16,7 @@ use yew_router::prelude::*;
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
-    #[at("/Portfolio")]
+    #[at("/portfolio")]
     Home,
     #[not_found]
     #[at("/404")]
