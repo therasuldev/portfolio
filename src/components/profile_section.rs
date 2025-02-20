@@ -11,7 +11,7 @@ pub struct ProfileProps {
 #[function_component]
 pub fn ProfileSection(props: &ProfileProps) -> Html {
     html! {
-        <div style="font-family: 'Space Mono', monospace; margin-bottom: 3rem; width: 80%;">
+        <div class="w-full md:w-4/5 mb-12" style="font-family: 'Space Mono', monospace;">
         {
             if let Some(error_message) = &props.error {
                 html! {
@@ -23,17 +23,20 @@ pub fn ProfileSection(props: &ProfileProps) -> Html {
                 html! {}
             }
         }
-            <div style="margin-bottom: 2rem;">
-                <h1 style="font-size: 2.25rem; font-weight: 800; color: #08504BFF; margin-bottom: 0.5rem; letter-spacing: 0.05em;">
+            <div class="mb-8 text-center md:text-left">
+                <h1 class="text-4xl font-extrabold text-[#08504B] mb-2 tracking-wide"
+                    style="font-family: 'Space Mono', monospace;">
                     { &props.name }
                 </h1>
-                <p style="font-size: 1.125rem; color: #718096; line-height: 1.6; letter-spacing: 0.05em;">
+                <p class="text-lg text-gray-600 leading-relaxed tracking-wide"
+                    style="font-family: 'Space Mono', monospace;">
                     { &props.description }
                 </p>
             </div>
 
-            <div>
-                <p style="font-size: 1.125rem; color: #718096; line-height: 1.6; letter-spacing: 0.05em;">
+            <div class="text-center md:text-left">
+                <p class="text-lg text-gray-600 leading-relaxed tracking-wide"
+                    style="font-family: 'Space Mono', monospace;">
                     { &props.about }
                 </p>
             </div>
