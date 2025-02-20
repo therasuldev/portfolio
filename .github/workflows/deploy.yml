@@ -1,4 +1,4 @@
-name: Deploy Portfolio App
+name: Portfolio App
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
         run: cargo install trunk
 
       - name: Build the App
-        run: trunk build --release --public-url /Portfolio/
+        run: trunk build --release --public-url /portfolio/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
