@@ -122,26 +122,27 @@ fn HomePage() -> Html {
     let content = match *active_section {
         ActiveSection::Profile => {
             html! {
-                <div class="flex flex-row items-top min-h-screen">
-                    <div class="flex flex-row space-x-8">
+                <div class="flex flex-col md:flex-row items-center md:items-start min-h-screen p-4 md:space-x-8">
+                    <div class="md:w-1/3 w-full flex justify-center">
                         <img
                             src="https://avatars.githubusercontent.com/u/74558294?v=4"
                             alt="Profile Picture"
-                            class="w-96 h-96 object-cover rounded-lg"
+                            class="w-48 h-48 md:w-96 md:h-96 object-cover rounded-lg"
                         />
+                    </div>
 
-                        <div class="flex flex-col space-y-4 w-3/5">
+                    <div class="flex flex-col space-y-4 md:w-2/3 w-full mt-4 md:mt-0">
                         <ProfileSection
                             name={(*name).clone()}
                             description={(*description).clone()}
                             about={(*about).clone()}
                             error={(*error).clone()}
                         />
-                        </div>
                     </div>
                 </div>
             }
         }
+
         ActiveSection::Projects => {
             html! {
                 <ProjectsSection
@@ -174,16 +175,19 @@ fn HomePage() -> Html {
                 { shake_animation }
             </style>
             <div class="flex min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
-                <div class="flex-grow p-4">
+                <div class="flex-grow p-4 md:pr-24"> // Sağ boşluq buraxırıq (desktopda)
                     {content}
                 </div>
             </div>
-            <div class="fixed top-0 right-0 h-screen w-20 bg-white/20 backdrop-blur-sm flex items-center justify-center">
+
+            // 🖥️ **DESKTOP SIDEBAR (Sağda qalan)**
+            <div class="hidden md:fixed md:top-0 md:right-0 md:h-screen md:w-20 bg-white/20 backdrop-blur-sm
+                        md:flex items-center justify-center">
                 <nav class="flex flex-col items-center space-y-6">
-                    { for icons.into_iter().map(|(icon, section, label)| {
+                    { for icons.iter().map(|(icon, section, label)| {
                         let active_section = active_section.clone();
                         let animation_state = animation_state.clone();
-                        let is_active = *active_section == section;
+                        let is_active = *active_section == *section;
 
                         let onclick = {
                             let section = section.clone();
@@ -213,7 +217,7 @@ fn HomePage() -> Html {
                             })
                         };
 
-                        let is_shaking = animation_state.shaking && animation_state.target_section == section;
+                        let is_shaking = animation_state.shaking && animation_state.target_section == *section;
                         html! {
                             <div class="relative group">
                                 <button
@@ -231,7 +235,7 @@ fn HomePage() -> Html {
                                     onclick={onclick}
                                 >
                                     <div class="text-xl">
-                                        { icon }
+                                        { icon.clone() }
                                     </div>
                                 </button>
                                 <div class="absolute left-full ml-2 px-3 py-1 bg-black/75 text-white text-sm rounded-full
@@ -242,6 +246,68 @@ fn HomePage() -> Html {
                             </div>
                         }
 
+                    })}
+                </nav>
+            </div>
+
+            // 📱 **MOBILE BOTTOM NAVBAR (Ekranın aşağısında)**
+            <div class="fixed bottom-0 left-0 w-full h-16 bg-white/20 backdrop-blur-sm
+                        flex md:hidden items-center justify-center">
+                <nav class="flex flex-row items-center justify-around w-full px-4">
+                    { for icons.iter().map(|(icon, section, _label)| {
+                        let active_section = active_section.clone();
+                        let animation_state = animation_state.clone();
+                        let is_active = *active_section == *section;
+
+                        let onclick = {
+                            let section = section.clone();
+                            let active_section = active_section.clone();
+                            let animation_state = animation_state.clone();
+
+                            Callback::from(move |_| {
+                                if *active_section != section {
+                                    animation_state.set(AnimationState {
+                                        shaking: true,
+                                        target_section: section.clone(),
+                                    });
+
+                                    let animation_state = animation_state.clone();
+                                    let active_section = active_section.clone();
+                                    let section = section.clone();
+
+                                    gloo_timers::callback::Timeout::new(500, move || {
+                                        active_section.set(section.clone());
+                                        animation_state.set(AnimationState {
+                                            shaking: false,
+                                            target_section: section,
+                                        });
+                                    })
+                                    .forget();
+                                }
+                            })
+                        };
+
+                        let is_shaking = animation_state.shaking && animation_state.target_section == *section;
+                        html! {
+                            <button
+                                class={format!(
+                                    "w-12 h-12 flex items-center justify-center rounded-full border-2 border-purple-600 \
+                                    transition-all duration-300 {} {} {}",
+                                    if is_active {
+                                        "bg-purple-900 text-white shadow-lg scale-110 border-purple-600"
+                                    } else {
+                                        "text-white hover:bg-gray-800 hover:border-purple-400"
+                                    },
+                                    "transform hover:scale-110",
+                                    if is_shaking { "shake" } else { "" }
+                                )}
+                                onclick={onclick}
+                            >
+                                <div class="text-xl">
+                                    { icon.clone() }
+                                </div>
+                            </button>
+                        }
                     })}
                 </nav>
             </div>
