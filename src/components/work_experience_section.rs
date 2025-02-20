@@ -1,4 +1,3 @@
-use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
 use crate::data::Experience;
@@ -12,8 +11,11 @@ pub struct ExperienceSectionProps {
 #[function_component]
 pub fn ExperienceSection(props: &ExperienceSectionProps) -> Html {
     html! {
-        <div class="max-w-6xl w-full mb-4 mx-auto projects-section flex flex-col items-center" style="font-family: 'Space Mono', monospace;">
-            <h1 class="text-2xl font-bold mb-3 text-center" style="color: #08504B;">{"Work Experience"}</h1>
+        <div class="max-w-6xl w-full mb-20 mx-auto projects-section flex flex-col items-center"
+            style="font-family: 'Space Mono', monospace;">
+            <h1 class="text-2xl font-bold mb-3 text-center" style="color: #08504B;">
+                {"Work Experience"}
+            </h1>
 
             {
                 if let Some(error_message) = &props.error {
@@ -33,20 +35,23 @@ pub fn ExperienceSection(props: &ExperienceSectionProps) -> Html {
                         <div class="bg-black border border-gray-700 rounded-lg shadow-md p-6 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-gradient-to-br from-gray-900 via-black to-gray-800"
                             style="font-family: 'Space Mono', monospace; color: white; width: 80%;">
                             <div class="flex justify-between items-center mb-4">
-                                <div class="flex items-center">
-                                    <h3 class="text-xl font-semibold text-white mr-4" style="color: #718096; font-style: italic; text-decoration: underline; line-height: 1.6; letter-spacing: 0.05em;">
+                                <div class="flex items-center space-x-4 w-full overflow-hidden">
+                                    <h3 class="text-xl font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis"
+                                        style="color: #718096; font-style: italic; text-decoration: underline; letter-spacing: 0.05em; max-width: 50%;">
                                         {&exp.company}
                                     </h3>
-                                    <p class="font-semibold" style="font-family: 'Space Mono', monospace; color: #08504B;">
+                                    <p class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis"
+                                        style="font-family: 'Space Mono', monospace; color: #08504B; max-width: 40%;">
                                         {&exp.position}
                                     </p>
                                 </div>
-                                <span class="text-sm text-gray-300 bg-gray-800 px-3 py-1 rounded-full" style="font-family: 'Space Mono', monospace; color: #718096;">
-
+                                <span class="text-sm text-gray-300 bg-gray-800 px-3 py-1 rounded-full flex-shrink-0 min-w-fit sm:w-auto"
+                                    style="font-family: 'Space Mono', monospace; color: #718096;">
                                     {&exp.period}
                                 </span>
                             </div>
-                            <div class="mt-2 text-gray-300" style="display: -webkit-box; -webkit-line-clamp: 5; color:#718096;  -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; font-family: 'Space Mono', monospace;">
+                            <div class="mt-2 text-gray-300"
+                                style="color:#718096; font-family: 'Space Mono', monospace;">
                                 {&exp.description}
                             </div>
                         </div>
