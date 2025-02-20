@@ -1,4 +1,3 @@
-use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
 use crate::data::Project;
@@ -25,7 +24,7 @@ pub fn ProjectsSection(props: &ProjectsSectionProps) -> Html {
                     html! {}
                 }
             }
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mb-20">
                 {
                     props.projects.iter().map(|project| {
                         html! {
@@ -36,7 +35,7 @@ pub fn ProjectsSection(props: &ProjectsSectionProps) -> Html {
                                         {&project.name}
                                     </h3>
                                     <p class="text-sm mb-4 text-center"
-                                    style="display: -webkit-box; -webkit-line-clamp: 5; color:#718096;  -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; font-family: 'Space Mono', monospace;">
+                                       style="display: -webkit-box; -webkit-line-clamp: 5; color:#718096; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; font-family: 'Space Mono', monospace;">
                                         {&project.description}
                                     </p>
                                 </div>
