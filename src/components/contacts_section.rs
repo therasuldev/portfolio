@@ -1,4 +1,3 @@
-use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
 use crate::data::Contact;
@@ -12,8 +11,8 @@ pub struct ContactsSectionProps {
 #[function_component]
 pub fn ContactsSection(props: &ContactsSectionProps) -> Html {
     html! {
-        <div class="max-w-6xl w-full mb-4 mx-auto projects-section" style="font-family: 'Space Mono', monospace; width: 80%;">
-            <h1 class="text-2xl font-bold mb-3 text-center" style="color: #08504B;">{"Contact Me"}</h1>
+        <div class="max-w-6xl w-full mb-4 mx-auto projects-section px-4 md:px-6 lg:px-0" style="font-family: 'Space Mono', monospace; width: 90%;">
+            <h1 class="text-2xl md:text-3xl font-bold mb-3 text-center" style="color: #08504B;">{"Contact Me"}</h1>
 
             {
                 if let Some(error_message) = &props.error {
@@ -27,7 +26,7 @@ pub fn ContactsSection(props: &ContactsSectionProps) -> Html {
                 }
             }
 
-            <div class="flex justify-center gap-6 flex-wrap items-center">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 items-center">
                 {
                     props.contacts.iter().map(|contact| {
                         let (icon_class, link) = match contact.platform.as_str() {
@@ -42,12 +41,12 @@ pub fn ContactsSection(props: &ContactsSectionProps) -> Html {
                         html! {
                             <a
                                 href={link}
-                                class="flex items-center space-x-4 p-4 border border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 bg-gradient-to-br from-gray-900 via-black to-gray-800"
+                                class="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 border border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 bg-gradient-to-br from-gray-900 via-black to-gray-800"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <i class={icon_class}></i>
-                                <span class="text-lg text-white font-medium hover:text-blue-400 transition-colors duration-200" style="font-size: 1.125rem; color: #718096; line-height: 1.6; letter-spacing: 0.05em;">
+                                <span class="text-base md:text-lg text-white font-medium hover:text-blue-400 transition-colors duration-200" style="font-size: 1.125rem; color: #718096; line-height: 1.6; letter-spacing: 0.05em;">
                                     {&contact.platform}
                                 </span>
                             </a>
