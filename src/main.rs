@@ -3,12 +3,14 @@ mod data;
 mod services;
 
 use components::{
-    contacts_section::ContactsSection, profile_section::ProfileSection,
-    projects_section::ProjectsSection, work_experience_section::ExperienceSection,
+    contacts_section::ContactsSection, language_section::LanguageSection,
+    profile_section::ProfileSection, projects_section::ProjectsSection,
+    work_experience_section::ExperienceSection,
 };
 use services::{
-    contact_service::fetch_contacts_data, profile_service::fetch_profile_data,
-    project_service::fetch_projects_data, work_experience::fetch_work_experience_data,
+    contact_service::fetch_contacts_data, language_service::fetch_language_data,
+    profile_service::fetch_profile_data, project_service::fetch_projects_data,
+    work_experience_service::fetch_work_experience_data,
 };
 use wasm_bindgen_futures::spawn_local;
 use yew::prelude::*;
@@ -28,6 +30,7 @@ enum ActiveSection {
     Profile,
     Projects,
     Experience,
+    Language,
     Contacts,
 }
 
@@ -60,6 +63,7 @@ fn HomePage() -> Html {
     let projects = use_state(Vec::new);
     let contacts = use_state(Vec::new);
     let experiences = use_state(Vec::new);
+    let languages = use_state(Vec::new);
     let error = use_state(|| None::<String>);
     let active_section = use_state(|| ActiveSection::default());
     let animation_state = use_state(AnimationState::default);
@@ -71,6 +75,7 @@ fn HomePage() -> Html {
         let projects = projects.clone();
         let contacts = contacts.clone();
         let experiences = experiences.clone();
+        let languages = languages.clone();
         let error = error.clone();
 
         use_effect_with((), move |_| {
@@ -78,6 +83,7 @@ fn HomePage() -> Html {
                 fetch_profile_data(name, description, about, error.clone()).await;
                 fetch_projects_data(projects, error.clone()).await;
                 fetch_contacts_data(contacts, error.clone()).await;
+                fetch_language_data(languages, error.clone()).await;
                 fetch_work_experience_data(experiences, error.clone()).await;
             });
             || ()
@@ -111,6 +117,11 @@ fn HomePage() -> Html {
             html! {<i class="fa fa-briefcase"></i>},
             ActiveSection::Experience,
             "Experience",
+        ),
+        (
+            html! {<i class="fa fa-language"></i>},
+            ActiveSection::Language,
+            "Language",
         ),
         (
             html! {<i class="fa fa-envelope"></i>},
@@ -155,6 +166,14 @@ fn HomePage() -> Html {
             html! {
                 <ExperienceSection
                     experiences={(*experiences).clone()}
+                    error={(*error).clone()}
+                />
+            }
+        }
+        ActiveSection::Language => {
+            html! {
+                <LanguageSection
+                    languages={(*languages).clone()}
                     error={(*error).clone()}
                 />
             }
