@@ -10,7 +10,7 @@ pub struct ProjectsSectionProps {
 #[function_component]
 pub fn ProjectsSection(props: &ProjectsSectionProps) -> Html {
     html! {
-        <div class="max-w-6xl w-full mb-4 mx-auto projects-section" style="font-family: 'Space Mono', monospace; width: 80%;">
+        <div class="max-w-6xl w-full mb-4 mx-auto projects-section" style="font-family: Cursive; width: 80%;">
             <h1 class="text-2xl font-bold mb-3 text-center" style="color: #08504B;">{"Top Projects"}</h1>
 
             {
@@ -31,11 +31,11 @@ pub fn ProjectsSection(props: &ProjectsSectionProps) -> Html {
                             <div key={project.id} class="border border-gray-700 rounded-lg transform hover:scale-105 transition-all flex flex-col bg-gradient-to-br from-gray-900 via-black to-gray-800">
                                 <div class="px-6 py-4 flex-grow">
                                     <h3 class="text-base font-bold text-gray-800 mb-2 text-center"
-                                        style="font-family: 'Space Mono', monospace; color: #08504B;">
+                                        style="font-family: Cursive; color: #08504B;">
                                         {&project.name}
                                     </h3>
                                     <p class="text-sm mb-4 text-center"
-                                       style="display: -webkit-box; -webkit-line-clamp: 5; color:#718096; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; font-family: 'Space Mono', monospace;">
+                                       style="display: -webkit-box; -webkit-line-clamp: 5; color:#718096; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; font-family: Cursive;">
                                         {&project.description}
                                     </p>
                                 </div>
@@ -44,7 +44,7 @@ pub fn ProjectsSection(props: &ProjectsSectionProps) -> Html {
                                     class="inline-block px-4 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition mx-auto mb-4 relative overflow-hidden shimmer"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style="font-family: 'Space Mono', monospace; position: relative; background: linear-gradient(90deg, #4F46E5 0%, #60A5FA 50%, #4F46E5 100%); background-size: 200% auto; animation: shimmer 2s infinite linear;"
+                                    style="font-family: Cursive; position: relative; background: linear-gradient(90deg, #4F46E5 0%, #60A5FA 50%, #4F46E5 100%); background-size: 200% auto; animation: shimmer 2s infinite linear;"
                                 >
                                     {"View Project"}
                                     <style>

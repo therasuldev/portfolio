@@ -24,19 +24,19 @@ pub fn ProfileSection(props: &ProfileProps) -> Html {
             }
         }
             <div class="mb-8 text-center md:text-left">
-                <h1 class="text-4xl font-extrabold text-[#08504B] mb-2 tracking-wide"
-                    style="font-family: 'Space Mono', monospace;">
+                <h1 class="text-4xl font-extrabold mb-2 tracking-wide"
+                    style="font-family: Cursive; color: #08504B;">
                     { &props.name }
                 </h1>
                 <p class="text-lg text-gray-600 leading-relaxed tracking-wide"
-                    style="font-family: 'Space Mono', monospace;">
+                    style="font-family: Cursive;">
                     { &props.description }
                 </p>
             </div>
 
             <div class="text-center md:text-left">
                 <p class="text-lg text-gray-600 leading-relaxed tracking-wide"
-                    style="font-family: 'Space Mono', monospace;">
+                    style="font-family: Cursive;">
                     { &props.about }
                 </p>
             </div>
