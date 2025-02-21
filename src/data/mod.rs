@@ -32,6 +32,24 @@ pub struct Experience {
     pub description: String,
 }
 
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+pub struct Language {
+    pub id: i32,
+    pub name: String,
+    pub native_name: String,
+    pub flag_emoji: String,
+    pub skills: LanguageSkills,
+    pub certification: Option<String>,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+pub struct LanguageSkills {
+    pub speaking: u8,
+    pub writing: u8,
+    pub reading: u8,
+    pub listening: u8,
+}
+
 lazy_static! {
     pub static ref STATIC_PROFILE: Profile = Profile {
         name: String::from("Rasul Ramixanov"),
@@ -59,6 +77,47 @@ lazy_static! {
             link: String::from("https://github.com/therasuldev/iNotes"),
         },
     ];
+    pub static ref STATIC_LANGUAGES: Vec<Language> = vec![
+    Language {
+        id: 1,
+        name: String::from("Azərbaycan dili"),
+        native_name: String::from("Azərbaycan dili"),
+        flag_emoji: String::from("🇦🇿"),
+        skills: LanguageSkills {
+            speaking: 100,
+            writing: 100,
+            reading: 100,
+            listening: 100,
+        },
+        certification: None,
+    },
+    Language {
+        id: 2,
+        name: String::from("English"),
+        native_name: String::from("English"),
+        flag_emoji: String::from("🇬🇧"),
+        skills: LanguageSkills {
+            speaking: 85,
+            writing: 90,
+            reading: 95,
+            listening: 90,
+        },
+        certification: Some(String::from("IELTS 7.5")),
+    },
+    Language {
+        id: 3,
+        name: String::from("Türkçe"),
+        native_name: String::from("Türkçe"),
+        flag_emoji: String::from("🇹🇷"),
+        skills: LanguageSkills {
+            speaking: 90,
+            writing: 85,
+            reading: 95,
+            listening: 95,
+        },
+        certification: None,
+    },
+];
 
     pub static ref STATIC_CONTACTS: Vec<Contact> = vec![
         Contact {
