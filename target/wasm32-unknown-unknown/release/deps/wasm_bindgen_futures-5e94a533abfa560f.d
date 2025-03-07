@@ -1,9 +1,0 @@
-/Users/rasulramixanov/My_Projects.nosync/portfolio/target/wasm32-unknown-unknown/release/deps/libwasm_bindgen_futures-5e94a533abfa560f.rmeta: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/queue.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/task/singlethread.rs
-
-/Users/rasulramixanov/My_Projects.nosync/portfolio/target/wasm32-unknown-unknown/release/deps/libwasm_bindgen_futures-5e94a533abfa560f.rlib: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/queue.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/task/singlethread.rs
-
-/Users/rasulramixanov/My_Projects.nosync/portfolio/target/wasm32-unknown-unknown/release/deps/wasm_bindgen_futures-5e94a533abfa560f.d: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/queue.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/task/singlethread.rs
-
-/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/lib.rs:
-/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/queue.rs:
-/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.49/src/task/singlethread.rs:
