@@ -1,0 +1,10 @@
+/Users/rasulramixanov/My_Projects.nosync/portfolio/target/wasm32-unknown-unknown/release/deps/libgetrandom-6688a057cb87e8d6.rmeta: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/js.rs
+
+/Users/rasulramixanov/My_Projects.nosync/portfolio/target/wasm32-unknown-unknown/release/deps/libgetrandom-6688a057cb87e8d6.rlib: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/js.rs
+
+/Users/rasulramixanov/My_Projects.nosync/portfolio/target/wasm32-unknown-unknown/release/deps/getrandom-6688a057cb87e8d6.d: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/js.rs
+
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs:
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs:
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs:
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/js.rs:

@@ -1,0 +1,8 @@
+/Users/rasulramixanov/My_Projects.nosync/portfolio/target/debug/deps/libyew_style_in_rs_core-7a9d2a0f74d21557.rmeta: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/ast.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/cursor.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/transpiler.rs
+
+/Users/rasulramixanov/My_Projects.nosync/portfolio/target/debug/deps/yew_style_in_rs_core-7a9d2a0f74d21557.d: /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/lib.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/ast.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/cursor.rs /Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/transpiler.rs
+
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/lib.rs:
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/ast.rs:
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/cursor.rs:
+/Users/rasulramixanov/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yew-style-in-rs-core-0.4.1/src/transpiler.rs:
