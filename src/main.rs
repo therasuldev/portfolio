@@ -402,9 +402,9 @@ fn App() -> Html {
     }
 
     html! {
-        <BrowserRouter>
+        <HashRouter>
             <Switch<Route> render={switch} />
-        </BrowserRouter>
+        </HashRouter>
     }
 }
 
