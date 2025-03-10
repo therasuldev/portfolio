@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasul Ramixanov</title>
-    <link data-trunk rel="rust" />
+    
+    <script type="module">
+        import init, * as bindings from './therasuldev-web-app-b0863b3da3ce7415.js';
+        const wasm = await init({ module_or_path: './therasuldev-web-app-b0863b3da3ce7415_bg.wasm' });
+
+        window.wasmBindings = bindings;
+        dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
     <div id="app"></div>
-    <script src="dist/therasuldev-web-app-b0863b3da3ce7415.js"></script>
+    <script type="module" src="./therasuldev-web-app-b0863b3da3ce7415.js"></script>
 </body>
 </html>
