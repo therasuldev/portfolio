@@ -6,8 +6,8 @@
     <title>Rasul Ramixanov</title>
     
     <script type="module">
-        import init, * as bindings from './therasuldev-web-app-b0863b3da3ce7415.js';
-        const wasm = await init({ module_or_path: './therasuldev-web-app-b0863b3da3ce7415_bg.wasm' });
+        import init, * as bindings from '/dist/therasuldev-web-app-b0863b3da3ce7415.js';
+        const wasm = await init({ module_or_path: '/dist/therasuldev-web-app-b0863b3da3ce7415_bg.wasm' });
 
         window.wasmBindings = bindings;
         dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
@@ -19,6 +19,6 @@
 </head>
 <body>
     <div id="app"></div>
-    <script type="module" src="./therasuldev-web-app-b0863b3da3ce7415.js"></script>
+    <script type="module" src="/dist/therasuldev-web-app-b0863b3da3ce7415.js"></script>
 </body>
 </html>
