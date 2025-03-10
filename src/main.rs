@@ -339,7 +339,7 @@ fn NotFound() -> Html {
     html! {
         <div class="flex justify-center items-center h-screen">
             <h1 class="text-4xl font-bold text-gray-800">{ "404" }</h1>
-            <p class="text-lg text-gray-600">{ "Page not found" }</p>
+            <p class="text-lg text-gray-600">{ "DAMMMMMMM!" }</p>
         </div>
     }
 }
