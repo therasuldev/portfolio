@@ -2,3 +2,8 @@
 dist = "dist"
 public_url = "/"
 public_dir = "public"
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+arguments = ["-c", "cp public/404.html dist/"]

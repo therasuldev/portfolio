@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasul Ramixanov</title>
+    
+    <script type="module">
+        import init, * as bindings from '/dist/therasuldev-web-app-b0863b3da3ce7415.js';
+        const wasm = await init({ module_or_path: '/dist/therasuldev-web-app-b0863b3da3ce7415_bg.wasm' });
+
+        window.wasmBindings = bindings;
+        dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="modulepreload" href="/therasuldev-web-app-be69da0d15182ec8.js" crossorigin=anonymous integrity="sha384-S6CZd4B637xAqUjir5DTMFGnK18AhjXDCne2ccdY2VN6q2/S6iZNePhhaDz15vBx"><link rel="preload" href="/therasuldev-web-app-be69da0d15182ec8_bg.wasm" crossorigin=anonymous integrity="sha384-Mhy4E50xPmKNZBsn0RSCDdI61m9giRfCUDRfdaTo2TImNf1OlTGhRM9NFGUTE5Dy" as="fetch" type="application/wasm"></head>
+<body>
+    <div id="app"></div>
+    <script type="module" src="/dist/therasuldev-web-app-b0863b3da3ce7415.js"></script>
+
+<script type="module" nonce="mzCuMbMGmVgkQGHPmBMuBw==">
+import init, * as bindings from '/therasuldev-web-app-be69da0d15182ec8.js';
+const wasm = await init({ module_or_path: '/therasuldev-web-app-be69da0d15182ec8_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
