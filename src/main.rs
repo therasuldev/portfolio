@@ -371,36 +371,6 @@ fn switch(route: Route) -> Html {
 
 #[function_component]
 fn App() -> Html {
-    // Check for redirected path on app load
-    {
-        use_effect_with((), |_| {
-            if let Some(window) = web_sys::window() {
-                // Try to get the redirected path from sessionStorage
-                if let Ok(Some(storage)) = window.session_storage() {
-                    if let Ok(Some(path)) = storage.get_item("redirect_path") {
-                        // Clear the stored path to prevent infinite redirects
-                        let _ = storage.remove_item("redirect_path");
-
-                        // Get location and pathname
-                        if let Some(location) = window.location().pathname().ok() {
-                            // Only redirect if we're on the home page
-                            if location == "/" {
-                                // Try to navigate to the saved path
-                                let history = window.history().unwrap();
-                                let _ = history.replace_state_with_url(
-                                    &wasm_bindgen::JsValue::NULL,
-                                    "",
-                                    Some(&path),
-                                );
-                            }
-                        }
-                    }
-                }
-            }
-            || ()
-        });
-    }
-
     html! {
         <HashRouter>
             <Switch<Route> render={switch} />
