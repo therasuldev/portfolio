@@ -371,10 +371,48 @@ fn switch(route: Route) -> Html {
 
 #[function_component]
 fn App() -> Html {
+    {
+        use_effect_with((), |_| {
+            // URL parametrelerini kontrol et
+            if let Some(window) = web_sys::window() {
+                // location bir Option döndürür, Option::Some ile kontrol edin
+                let location = window.location();
+
+                // search methodunu çağırın
+                if let Ok(search) = location.search() {
+                    // "?redirect=..." parametresini kontrol et
+                    if search.contains("redirect=") {
+                        // Parametre değerini çıkar
+                        let params = search.trim_start_matches('?').split('&');
+                        for param in params {
+                            if param.starts_with("redirect=") {
+                                let path = param.split('=').nth(1).unwrap_or("");
+
+                                // Geçerli bir yönlendirme yolumuz varsa
+                                if !path.is_empty() {
+                                    // URL'i ​​temizle ve history API'sini kullan
+                                    if let Ok(history) = window.history() {
+                                        let _ = history.replace_state_with_url(
+                                            &wasm_bindgen::JsValue::NULL,
+                                            "",
+                                            Some(&format!("/{}", path)),
+                                        );
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            || ()
+        });
+    }
+
     html! {
-        <HashRouter>
+        <BrowserRouter>
             <Switch<Route> render={switch} />
-        </HashRouter>
+        </BrowserRouter>
     }
 }
 
