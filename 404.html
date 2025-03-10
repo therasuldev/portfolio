@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=/">
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
     <script>
-        window.location.replace("/");
+        // Get the current path from the URL
+        var path = window.location.pathname;
+        
+        // Save the path to sessionStorage so the main app can use it
+        sessionStorage.setItem('redirect_path', path);
+        
+        // Redirect to the main index.html
+        window.location.href = '/';
     </script>
 </head>
 <body>
-    <p>If you are not redirected, <a href="/">click here</a>.</p>
+    <p>Redirecting to home page...</p>
 </body>
 </html>
