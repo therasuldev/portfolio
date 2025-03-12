@@ -21,9 +21,12 @@ pub enum Route {
     #[at("/")]
     Home,
 
-    #[not_found]
     #[at("/404")]
     NotFound,
+    
+    #[not_found]
+    #[at("/*")]
+    CatchAll,
 }
 
 #[derive(Clone, PartialEq)]
@@ -365,7 +368,7 @@ fn NotFound() -> Html {
 fn switch(route: Route) -> Html {
     match route {
         Route::Home => html! { <HomePage /> },
-        Route::NotFound => html! { <NotFound /> },
+        Route::NotFound | Route::CatchAll => html! { <NotFound /> },
     }
 }
 
