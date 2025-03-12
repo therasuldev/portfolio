@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasul Ramixanov</title>
-
+    
     <script type="module">
         import init, * as bindings from '/dist/therasuldev-web-app-b0863b3da3ce7415.js';
         const wasm = await init({ module_or_path: '/dist/therasuldev-web-app-b0863b3da3ce7415_bg.wasm' });
@@ -14,27 +13,12 @@
         dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
     </script>
 
-    <script>
-        // URL'den parametreyi kontrol et
-        (function () {
-            const path = window.location.hash;
-            if (path.includes('404')) {
-                // 404 sayfasına yönlendirildi, bu durumda hiçbir şey yapma
-            } else if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
-                // Olmayan bir yol, 404 sayfasına yönlendir
-                window.location.href = '/#/404';
-            }
-        })();
-    </script>
-
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
     <div id="app"></div>
     <script type="module" src="/dist/therasuldev-web-app-b0863b3da3ce7415.js"></script>
 </body>
-
 </html>
