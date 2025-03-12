@@ -11,8 +11,8 @@ pub struct ContactsSectionProps {
 #[function_component]
 pub fn ContactsSection(props: &ContactsSectionProps) -> Html {
     html! {
-        <div class="max-w-6xl w-full mb-4 mx-auto projects-section px-4 md:px-6 lg:px-0" style="font-family: Cursive; width: 90%;">
-            <h1 class="text-2xl md:text-3xl font-bold mb-3 text-center" style="color: #08504B;">{"Contact Me"}</h1>
+        <div class="max-w-6xl w-full mb-4 mx-auto projects-section px-4 md:px-6 lg:px-0" style="font-family: Courier; width: 90%;">
+            <h1 class="text-2xl md:text-3xl font-bold mb-3 text-center" style="color: #ADBCC6FF;">{"Contact Me"}</h1>
 
             {
                 if let Some(error_message) = &props.error {

@@ -23,9 +23,9 @@ pub fn ProfileSection(props: &ProfileProps) -> Html {
                 html! {}
             }
         }
-            <div class="mb-8 text-center md:text-left" style="font-family: Cursive;">
+            <div class="mb-8 text-center md:text-left" style="font-family: Courier;">
                 <h1 class="text-4xl font-extrabold mb-2 tracking-wide"
-                    style="color: #08504B;">
+                    style="color: #ADBCC6FF;">
                     { &props.name }
                 </h1>
                 <p class="text-lg text-gray-600 leading-relaxed tracking-wide">

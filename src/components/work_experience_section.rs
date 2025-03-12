@@ -12,8 +12,8 @@ pub struct ExperienceSectionProps {
 pub fn ExperienceSection(props: &ExperienceSectionProps) -> Html {
     html! {
         <div class="max-w-6xl w-full mb-20 mx-auto projects-section flex flex-col items-center"
-            style="font-family: Cursive; width: 80%;">
-            <h1 class="text-2xl font-bold mb-3 text-center" style="color: #08504B;">
+            style="font-family: Courier; width: 80%;">
+            <h1 class="text-2xl font-bold mb-3 text-center" style="color: #ADBCC6FF;">
                 {"Work Experience"}
             </h1>
 
@@ -36,11 +36,11 @@ pub fn ExperienceSection(props: &ExperienceSectionProps) -> Html {
                             <div class="flex justify-between items-center mb-4">
                                 <div class="flex items-center space-x-4 w-full overflow-hidden">
                                     <h3 class="text-xl font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis"
-                                        style="color: #718096; font-style: italic; text-decoration: underline; letter-spacing: 0.05em; max-width: 50%;">
+                                        style="color: #ADBCC6FF; font-style: italic; text-decoration: underline; letter-spacing: 0.05em; max-width: 50%;">
                                         {&exp.company}
                                     </h3>
                                     <p class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis"
-                                        style="color: #08504B; max-width: 40%;">
+                                        style="color: #ADBCC6FF; max-width: 40%;">
                                         {&exp.position}
                                     </p>
                                 </div>
