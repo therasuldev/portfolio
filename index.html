@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasul Ramixanov</title>
-    
+
     <script type="module">
         import init, * as bindings from '/dist/therasuldev-web-app-b0863b3da3ce7415.js';
         const wasm = await init({ module_or_path: '/dist/therasuldev-web-app-b0863b3da3ce7415_bg.wasm' });
@@ -13,17 +14,31 @@
         dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
     </script>
 
+    <script>
+        // URL'den parametreyi kontrol et
+        (function () {
+            const path = window.location.hash;
+            if (path.includes('404')) {
+                // 404 sayfasına yönlendirildi, bu durumda hiçbir şey yapma
+            } else if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+                // Olmayan bir yol, 404 sayfasına yönlendir
+                window.location.href = '/#/404';
+            }
+        })();
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-<link rel="modulepreload" href="/therasuldev-web-app-cb6589cfa9023135.js" crossorigin="anonymous" integrity="sha384-WsJBbB/+rxuLOH9I8+cwM1FS/JIgedpMhPPmiRW9UppFW4ENsa9gFI0YnSCdPB+0"><link rel="preload" href="/therasuldev-web-app-cb6589cfa9023135_bg.wasm" crossorigin="anonymous" integrity="sha384-asCT4uf8srCaRw4fNwkY1xfA7OLh9czOt8wjnTKpNPljj4YlVdw5zWEAOmzzcgtq" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/therasuldev-web-app-45c0daa0439fd6cf.js" crossorigin="anonymous" integrity="sha384-brT6jbaPFXIU6VO6RBifMDvyRymypNDYJDzwCq9zdP8c5Zia+o6273kizZpSRuRK"><link rel="preload" href="/therasuldev-web-app-45c0daa0439fd6cf_bg.wasm" crossorigin="anonymous" integrity="sha384-gvMAK1F/FPAPrQqXF+K4rtBHR/3JveUlqCrubspOnDpOCY5vBNVrwO3XFAieae/a" as="fetch" type="application/wasm"></head>
+
 <body>
     <div id="app"></div>
     <script type="module" src="/dist/therasuldev-web-app-b0863b3da3ce7415.js"></script>
 
 <script type="module">
-import init, * as bindings from '/therasuldev-web-app-cb6589cfa9023135.js';
-const wasm = await init({ module_or_path: '/therasuldev-web-app-cb6589cfa9023135_bg.wasm' });
+import init, * as bindings from '/therasuldev-web-app-45c0daa0439fd6cf.js';
+const wasm = await init({ module_or_path: '/therasuldev-web-app-45c0daa0439fd6cf_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -32,4 +47,5 @@ window.wasmBindings = bindings;
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script></body>
+
 </html>
