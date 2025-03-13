@@ -61,7 +61,7 @@ lazy_static! {
         Project {
             id: 1,
             name: String::from("simple-app-cache-manager"),
-            description: String::from("Flutter Package for Managing Application Cache."),
+            description: String::from("Simple App Cache Manager offers a cross-platform solution for managing app caches efficiently. It’s built using native code—Kotlin for Android and Swift for iOS—to leverage each platform’s strengths. Additionally, it utilizes channels to seamlessly integrate with Flutter, enabling a unified approach for cache management in cross-platform mobile applications."),
             link: String::from("https://github.com/therasuldev/simple-app-cache-manager"),
         },
         Project {
@@ -75,6 +75,12 @@ lazy_static! {
             name: String::from("iNotes"),
             description: String::from("A note app with a rich-text editor built using Flutter and Rust, allowing users to style their notes with colors, bold text, and more. It’s fast, secure, and works seamlessly on both Android and iOS!"),
             link: String::from("https://github.com/therasuldev/iNotes"),
+        },
+        Project {
+            id: 4,
+            name: String::from("portfolio"),
+            description: String::from("My portfolio written in Rust🦂\nThis repository contains a Rust-powered static website built as a personal portfolio. It’s deployed on GitHub Pages and seamlessly integrated with the custom domain ramikhanov.com, showcasing modern design and performance through Rust’s efficiency."),
+            link: String::from("https://github.com/therasuldev/portfolio"),
         },
     ];
     pub static ref STATIC_LANGUAGES: Vec<Language> = vec![
